@@ -81,14 +81,14 @@ class DrawingView extends View {
                 float x = event.getX();
                 float y = event.getY();
                 for (int i = 0; i < drawnCircleList.size(); i++) {
-//                   시작표시 원을 선택하고 움직인 경우인지 확인
+//                  원을 선택하고 움직인 경우인지 확인
                     float circleXFloat = drawnCircleList.get(i).getCircleX();
                     float circleYFloat = drawnCircleList.get(i).getCircleY();
                     int circleRadius = drawnCircleList.get(i).getRadius();
                     double dx = Math.pow(x - circleXFloat, 2);
                     double dy = Math.pow(y - circleYFloat, 2);
                     if (dx + dy < Math.pow(circleRadius, 2)) {
-//                    시작표시 원안에 터치됨
+//                     원안에 터치됨
                         moveCircleShape(x, y, i);
                         clickListener.onCircleClick();
                         return true;
